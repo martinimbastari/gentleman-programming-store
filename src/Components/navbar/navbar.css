@@ -1,0 +1,16 @@
+.hamburguerMenu {
+    display: none;
+}
+
+
+@media screen and (max-width:490px) {
+    .navbar {
+        display: none;
+    }
+
+    .hamburguerMenu {
+        display: inline-flex;
+    }
+
+    
+}
