@@ -5,11 +5,10 @@ import Home from "./Components/home/Home";
 
 const Container = styled.div`
 background: white;
-height: 100vh;
 color: black;
 box-sizing: border-box;
-min-height: 100%;
-    position: relative;
+position: absolute;
+
 `
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
     <>
       <Container>
         <Home/>
-        {/* <Footer/> */}
+        <Footer/>
       </Container>
     </>
   );

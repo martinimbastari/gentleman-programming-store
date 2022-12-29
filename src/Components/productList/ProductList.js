@@ -77,7 +77,8 @@ export const  ProductList = ()  => {
     align-items: center;
     flex-wrap: wrap;
     max-width: 1500px;
-    margin: 0 auto;
+    margin: 0 auto 120px auto;
+    padding: 0 0 50px 0;
     `
 
     const Card = styled.div `

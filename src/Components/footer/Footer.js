@@ -11,12 +11,14 @@ export default function Footer() {
     padding: 10px;
     position: absolute;
     bottom: 0;
+    text-align: center;
 `
 
 const Title = styled.h2`
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     display: block;
+    text-align: center;
 `
 return (
     <Container>
