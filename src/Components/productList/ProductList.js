@@ -76,8 +76,7 @@ export const  ProductList = ()  => {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1500px;
-    margin: 0 auto 120px auto;
+    margin: 0 60px 120px 60px;
     padding: 0 0 50px 0;
     `
 

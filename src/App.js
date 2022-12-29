@@ -8,6 +8,7 @@ background: white;
 color: black;
 box-sizing: border-box;
 position: absolute;
+max-width: 2000px;
 
 `
 
