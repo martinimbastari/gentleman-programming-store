@@ -21,7 +21,7 @@ const Title = styled.h2`
     text-align: center;
 `
 return (
-    <Container>
+    <Container id='nosotros'>
         <Title>Desafio creado para entrevista de trabajo en Gentleman Programming</Title>
         <p>Desarrollado por Martin Imbastari</p>
     </Container>

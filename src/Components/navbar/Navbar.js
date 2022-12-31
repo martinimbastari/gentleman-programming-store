@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import "./navbar.css"
 
@@ -9,24 +9,26 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 width: 100%;
-background-color: #EFF3FA;
+background-color: #2D4263;
+z-index: 100;
 `
 
-const HamburgerMenu = styled.div `
-display: none;
-width: 40px;
-height: 40px;
-margin: 20px;
-@media (max-width: 768px) {
-  display: inline-flex;
-}
-`
+// const HamburgerMenu = styled.div `
+// display: none;
+// width: 40px;
+// height: 40px;
+// margin: 20px;
+// @media (max-width: 768px) {
+//   display: inline-flex;
+// }
+// `
 
 const ContainterLinks = styled.div `
 display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 30px;
+
 @media (max-width: 768px) {
   display: none;
 }
@@ -50,19 +52,23 @@ font-size: 20px;
 const A = styled.a  `
  text-decoration: none;
  color: black;
+ color: white;
  margin: 5px;
  &:hover {
-    color: #5982FB;
+    color: #141C29;
   }
 `
 
 export default function Navbar() {
+
+  const [toggleMenu, setToggleMenu] = useState(false)
+
   return (
-    <NavbarContainer>
+    <NavbarContainer id='inicio'>
         <ContainerImg>
           {/* <img alt='gentleman-logo' src={icon} height="100%" width="100%" ></img> */}
           <svg xmlns='http://www.w3.org/2000/svg'
-              fill="#000000"
+              fill="#fff"
               height="150px"
               width="150px"
               version="1.1"
@@ -84,9 +90,11 @@ export default function Navbar() {
               </path>
               </g> </g> </g> </g>
               </svg>
+              
         </ContainerImg>
-        <HamburgerMenu className='hamburguerMenu'>
+        <div  className='navbar-smallscreen'>
           <svg 
+          onClick={() => setToggleMenu(true)}
           viewBox="0 0 12 12"
           enable-background="new 0 0 12 12"
           id="1" 
@@ -98,11 +106,34 @@ export default function Navbar() {
           <g id="SVGRepo_bgCarrier" 
           stroke-width="0">
           </g><g id="SVGRepo_iconCarrier"> <g> 
-          <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="5.5"></rect>
-          <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="2.5"></rect> 
-          <rect fill="#1D1D1B" height="1" width="11" x="0.5" y="8.5"></rect> 
+          <rect fill="white" height="1" width="11" x="0.5" y="5.5"></rect>
+          <rect fill="white" height="1" width="11" x="0.5" y="2.5"></rect> 
+          <rect fill="white" height="1" width="11" x="0.5" y="8.5"></rect> 
           </g> </g></svg>
-        </HamburgerMenu>
+          { toggleMenu &&  (
+            <div className='smallscreen-overlay'>
+              <svg 
+              className='close-icon'
+            onClick={()=> setToggleMenu(false)}
+            height="30px" 
+            width="30px" 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xlink="http://www.w3.org/1999/xlink" 
+            viewBox="0 0 26 26" space="preserve" 
+            fill="#ffff"><g id="SVGRepo_bgCarrier" 
+            stroke-width="0"></g><g id="SVGRepo_iconCarrier"> 
+            <g> <path fill="#030104;" d="M21.125,0H4.875C2.182,0,0,2.182,0,4.875v16.25C0,23.818,2.182,26,4.875,26h16.25 C23.818,26,26,23.818,26,21.125V4.875C26,2.182,23.818,0,21.125,0z M18.78,17.394l-1.388,1.387c-0.254,0.255-0.67,0.255-0.924,0 L13,15.313L9.533,18.78c-0.255,0.255-0.67,0.255-0.925-0.002L7.22,17.394c-0.253-0.256-0.253-0.669,0-0.926l3.468-3.467 L7.221,9.534c-0.254-0.256-0.254-0.672,0-0.925l1.388-1.388c0.255-0.257,0.671-0.257,0.925,0L13,10.689l3.468-3.468 c0.255-0.257,0.671-0.257,0.924,0l1.388,1.386c0.254,0.255,0.254,0.671,0.001,0.927l-3.468,3.467l3.468,3.467 C19.033,16.725,19.033,17.138,18.78,17.394z"></path> </g> </g></svg>
+            <ul className='smallscreen-links'>
+              <li><a href='#inicio'>Inicio</a></li>
+              <li><a href='#productos'>Productos</a></li>
+              <li><a href='#nosotros'>Sobre Nosotros</a></li>
+            </ul>
+            </div>
+            
+          )}
+        </div>
         <ContainterLinks className='navbar'>
                 <Li><A href='#inicio'>Inicio</A></Li>
                 <Li><A href='#productos'>Productos ↓</A></Li>

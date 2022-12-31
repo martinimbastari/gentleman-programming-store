@@ -34,6 +34,7 @@ export const  ProductList = ()  => {
         setTotal(total + product.price * product.quantity);
         setCountProducts(countProducts + product.quantity);
         setAllProducts([...allProducts, product]);
+        alert("se agrego correctamente")
     }
     
     const showLowPrice = ()  => {
@@ -78,25 +79,34 @@ export const  ProductList = ()  => {
     flex-wrap: wrap;
     margin: 0 60px 120px 60px;
     padding: 0 0 50px 0;
+    @media (max-width: 768px) {
+        margin: 0 auto 120px auto;
+}
+    
     `
 
     const Card = styled.div `
-        background-color: #EFF3FA;
+        /* background-color: #EFF3FA; */
+        background-color: #2D4263;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         margin: 5px;
         text-align: center;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 15px;
         width: 250px;
         height: 400px;
         box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
-        border: 1px solid rgb(238, 238, 238);
+        border: 1px solid #2D4263;
         transition: all 275ms cubic-bezier(0.46, 0.03, 0.52, 0.96) 0s;
         &:hover {
             transform: scale(1.02,1.02);
             box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px 0px;
+        }
+        @media (max-width: 768px) {
+        width: 180px;
+        height: 400px;
         }
     `
 
@@ -105,22 +115,33 @@ export const  ProductList = ()  => {
         text-align: center;
         font-weight: bold;
         max-height:20px;
+        color: white;
+        @media (max-width: 768px) {
+            font-size: 15px;
+            max-height:30px;
+        }
     `
 
     const Price = styled.p `
+        color: white;
         font-size: 18px;
+        padding: 10px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        @media (max-width: 768px) {
+            font-size: 15px;
+            padding: 10px;
+        }
     `
     const Button = styled.button `
         border: none;
-        background-color: #010100;
+        background-color: #263143;
         color: aliceblue;
         width: 100%;
-        border-radius: 6px;
+        border-radius: 10px;
         padding: 10px;
         font-weight: 600;
         &:hover {
-            background-color: #141514;
+            background-color: #2C394D;
             cursor: pointer;
         }
     `
@@ -132,12 +153,12 @@ return (
     <ProductsFilter showLowPrice={showLowPrice} showHighPrice={showHighPrice}/>
     <Carrito allProducts={allProducts} setAllProducts={setAllProducts} total={total} setTotal={setTotal} countProducts={countProducts} setCountProducts={setCountProducts} />
     </Container>
-    <ContainerList>
+    <ContainerList id='productos'>
         {showPrice
         ? (data.map(product => (
         // <Itemcard key={product.id} product={product}/>
             <Card>
-                <img width="100%" height="100%" alt='product' src={product.image}/>
+                <img width="300px" height="400px" alt='product' src={product.image}/>
                 <Text>{product.title}</Text>
                 <Price>${product.price}</Price>
                 <Button onClick={()=>onAddProduct(product)}>Añadir al carrito</Button>

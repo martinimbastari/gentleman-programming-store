@@ -15,7 +15,7 @@ body {
 .icon-cart {
 	width: 40px;
 	height: 40px;
-	stroke: #000;
+	stroke: white;
 }
 
 .icon-cart:hover {
@@ -38,10 +38,11 @@ img {
 	top: 55%;
 	right: 0;
 
-	background-color: #000;
+	background-color: #2D4263;
 	color: #fff;
 	width: 25px;
 	height: 25px;
+	font-weight: bold;
 
 	display: flex;
 	justify-content: center;
@@ -57,7 +58,7 @@ img {
 	position: absolute;
 	top: 50px;
 	right: 0;
-
+	text-align: center;
 	background-color: #fff;
 	width: 400px;
 	z-index: 1;
@@ -70,6 +71,7 @@ img {
 	align-items: center;
 	justify-content: space-between;
 	padding: 30px;
+	text-align: center;
 
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -78,6 +80,9 @@ img {
 	display: flex;
 	justify-content: space-between;
 	flex: 0.8;
+	text-align: center;
+	align-items: center;
+	gap: 30px;
 }
 
 .titulo-producto-carrito {
@@ -91,8 +96,13 @@ img {
 }
 
 .cantidad-producto-carrito {
-	font-weight: 400;
-	font-size: 20px;
+	font-weight: 500;
+	font-size: 15px;
+	background-color: #000;
+	border-radius: 50%;
+	color: white;
+	padding: 5px;
+
 }
 
 .icon-close {

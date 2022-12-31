@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export default function ProductsFilter({showLowPrice,showHighPrice}) {
   const Container = styled.div `
   display: flex;
+  color: white;
   text-align: center;
   justify-content: center;
   align-items: center;

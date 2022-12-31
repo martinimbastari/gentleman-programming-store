@@ -10,7 +10,8 @@ export const  Itemcard = ({product:{title, image,price}} ) => {
     }
 
     const Card = styled.div `
-    background-color: #EFF3FA;
+    /* background-color: #EFF3FA; */
+    background-color: #2D4263;
     margin: 5px;
     text-align: center;
     padding: 10px;
