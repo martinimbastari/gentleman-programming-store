@@ -3,7 +3,12 @@ import styled from 'styled-components'
 import "./navbar.css"
 
 
-const NavbarContainer = styled.div `
+
+
+export default function Navbar() {
+  const [toggleMenu, setToggleMenu] = useState(false)
+
+  const NavbarContainer = styled.div `
 max-height: 200px;
 display: flex;
 justify-content: space-between;
@@ -58,10 +63,6 @@ const A = styled.a  `
     color: #141C29;
   }
 `
-
-export default function Navbar() {
-
-  const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
     <NavbarContainer id='inicio'>

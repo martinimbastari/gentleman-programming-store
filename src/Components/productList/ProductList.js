@@ -5,66 +5,16 @@ import { getFirestore, collection, getDocs} from "firebase/firestore";
 import ProductsFilter from '../productsFilter/ProductsFilter';
 import Carrito from '../carrito/Carrito';
 
+
+
+
 export const  ProductList = ()  => {
     const [data, setData] = useState([]);
     const [showPrice, setShowPrice] = useState();
     const [allProducts, setAllProducts] = useState([])
     const [total, setTotal] = useState(0)
     const [countProducts, setCountProducts] = useState(0);
-
-    useEffect(() => {
-        const querydb = getFirestore();
-        const queryCollection = collection(querydb, 'Products');
-        getDocs(queryCollection)
-        .then( res => setData(res.docs.map(product => ({id: product.id, ...product.data() }))))
-    }, []) 
-
-    const onAddProduct = (product) => {
-
-        if(allProducts.find(item => item.id === product.id)) {
-            const products = allProducts.map(item =>
-                item.id === product.id 
-                ? {...item, quantity: item.quantity + 1} 
-                : item);
-
-            setTotal(total + product.price * product.quantity);
-            setCountProducts(countProducts + product.quantity);
-            return setAllProducts([...products]);
-        }
-        setTotal(total + product.price * product.quantity);
-        setCountProducts(countProducts + product.quantity);
-        setAllProducts([...allProducts, product]);
-        alert("se agrego correctamente")
-    }
     
-    const showLowPrice = ()  => {
-        data.sort((a,b) => {
-        if (a.price < b.price) {
-            return -1;
-        } if (a.price > b.price) {
-            return 1;
-        } else {
-            return 0;
-        }
-        })
-        setData(data)
-        setShowPrice(true)
-        
-    }
-
-    const showHighPrice = ()  => {
-        data.sort((a,b) => {
-        if (a.price > b.price) {
-            return -1;
-        } if (a.price < b.price) {
-            return 1;
-        } else {
-            return 0;
-        }
-        })
-        setData(data)
-        setShowPrice(false)
-    }
 
     const Container = styled.div`
     display: flex;
@@ -145,6 +95,62 @@ export const  ProductList = ()  => {
             cursor: pointer;
         }
     `
+
+useEffect(() => {
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'Products');
+    getDocs(queryCollection)
+    .then( res => setData(res.docs.map(product => ({id: product.id, ...product.data() }))))
+}, []) 
+
+    const onAddProduct = (product) => {
+
+        if(allProducts.find(item => item.id === product.id)) {
+            const products = allProducts.map(item =>
+                item.id === product.id 
+                ? {...item, quantity: item.quantity + 1} 
+                : item);
+
+            setTotal(total + product.price * product.quantity);
+            setCountProducts(countProducts + product.quantity);
+            return setAllProducts([...products]);
+        }
+        setTotal(total + product.price * product.quantity);
+        setCountProducts(countProducts + product.quantity);
+        setAllProducts([...allProducts, product]);
+        
+    }
+    
+    const showLowPrice = ()  => {
+        data.sort((a,b) => {
+        if (a.price < b.price) {
+            return -1;
+        } if (a.price > b.price) {
+            return 1;
+        } else {
+            return 0;
+        }
+        })
+        setData(data)
+        setShowPrice(true)
+        
+    }
+
+    const showHighPrice = ()  => {
+        data.sort((a,b) => {
+        if (a.price > b.price) {
+            return -1;
+        } if (a.price < b.price) {
+            return 1;
+        } else {
+            return 0;
+        }
+        })
+        setData(data)
+        setShowPrice(false)
+    }
+
+    
 
 
 return (
