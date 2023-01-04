@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import "./navbar.css"
 
 
-
-
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false)
 

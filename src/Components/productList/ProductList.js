@@ -58,8 +58,19 @@ export const  ProductList = ()  => {
         @media (max-width: 768px) {
         width: 180px;
         height: 400px;
+        padding: 0 5px 10px 5px;
+        margin-top: 0;
         }
     `
+
+const Img = styled.img `
+
+@media (max-width: 768px) {
+    height:150px;
+    padding: 0;
+    margin: 0;
+}
+`
 
     const Text = styled.p `
         font-size: 17px;
@@ -67,9 +78,10 @@ export const  ProductList = ()  => {
         font-weight: bold;
         max-height:20px;
         color: white;
+        margin-bottom: 20px;
         @media (max-width: 768px) {
             font-size: 15px;
-            max-height:30px;
+            max-height:60px;
         }
     `
 
@@ -165,7 +177,7 @@ return (
         ? (data.map(product => (
         // <Itemcard key={product.id} product={product}/>
             <Card>
-                <img width="300px" height="400px" alt='product' src={product.image}/>
+                <Img width="300px" height="400px" alt='product' src={product.image}/>
                 <Text>{product.title}</Text>
                 <Price>${product.price}</Price>
                 <Button onClick={()=>onAddProduct(product)}>Añadir al carrito</Button>
@@ -174,7 +186,7 @@ return (
         : (data.map(product => (
         // <Itemcard key={product.id} product={product}/>
             <Card>
-                <img width="320px" height="300px" alt='product' src={product.image}/>
+                <Img width="320px" height="400px" alt='product' src={product.image}/>
                 <Text>{product.title}</Text>
                 <Price>${product.price}</Price>
                 <Button onClick={()=>onAddProduct(product)}>Añadir al carrito</Button>

@@ -1,17 +1,16 @@
 .navbar-smallscreen {
     display: none;  
     width: 40px;
-    height: 40px;
-    margin: 20px;
+    height: 100px;
+    
     transition:  .5s ease;
 }
 
 .smallscreen-overlay {
     position: fixed;
-    top: 7%;
-    left: 1px;
-    right: 1px;
-    transition:  .5s ease;
+    top: 0%;
+    left: 0px;
+    right: 0px;
     flex-direction: column;
     z-index: 100;
     transition:  .5s ease;
@@ -20,21 +19,22 @@
 .close-icon {
     cursor: pointer;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 5%;
+    right: 5px;
 }
 
 .smallscreen-links {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
     font-size: 2rem;
-    text-align: center;
     list-style: none;
-    padding: 2rem;
-    border-radius: 15px 0 15px 15px;
-    background-color: white;
+    padding:  60px  0 100%  10px;
+    /* border-radius: 15px 0 15px 15px; */
+    background-color: #1d2a3fef;
     z-index: 100;
+    margin: 0;
     
 }
 
@@ -44,7 +44,7 @@
 
 .smallscreen-links li a {
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
 }
 
