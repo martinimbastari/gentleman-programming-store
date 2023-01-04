@@ -66,7 +66,7 @@ export const  ProductList = ()  => {
 const Img = styled.img `
 
 @media (max-width: 768px) {
-    height:150px;
+    height:100%;
     padding: 0;
     margin: 0;
 }
@@ -177,7 +177,7 @@ return (
         ? (data.map(product => (
         // <Itemcard key={product.id} product={product}/>
             <Card>
-                <Img width="300px" height="400px" alt='product' src={product.image}/>
+                <Img width="100%" height="100%" alt='product' src={product.image}/>
                 <Text>{product.title}</Text>
                 <Price>${product.price}</Price>
                 <Button onClick={()=>onAddProduct(product)}>Añadir al carrito</Button>
