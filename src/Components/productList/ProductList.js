@@ -44,10 +44,10 @@ export const  ProductList = ()  => {
         justify-content: flex-end;
         margin: 5px;
         text-align: center;
-        padding: 10px;
-        border-radius: 15px;
+        padding: 15px 0 0 0;
+        border-radius: 15px 15px 0 0 ;
         width: 250px;
-        height: 400px;
+        height: 410px;
         box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
         border: 1px solid #2D4263;
         transition: all 275ms cubic-bezier(0.46, 0.03, 0.52, 0.96) 0s;
@@ -56,9 +56,9 @@ export const  ProductList = ()  => {
             box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px 0px;
         }
         @media (max-width: 768px) {
-        width: 180px;
+        width: 184px;
         height: 400px;
-        padding: 0px ;
+        padding: 0px;
         margin-top: 10px;
         }
     `
@@ -72,10 +72,10 @@ const Img = styled.img `
 `
 
     const Text = styled.p `
-        font-size: 17px;
+        font-size: 15px;
         text-align: center;
         font-weight: bold;
-        max-height:20px;
+        max-height:25px;
         color: white;
         margin-bottom: 20px;
         @media (max-width: 768px) {
@@ -99,7 +99,7 @@ const Img = styled.img `
         background-color: #263143;
         color: aliceblue;
         width: 100%;
-        border-radius: 10px;
+        border-radius: 0 ;
         padding: 10px;
         font-weight: 600;
         &:hover {
@@ -107,9 +107,9 @@ const Img = styled.img `
             cursor: pointer;
         }
         @media (max-width: 768px) {
-            border-radius: 0px 0px 11px 11px;
-            width: 100%;
+            width: 182px;
             height: 70px;
+            border-radius: 0;
         }
 
         
