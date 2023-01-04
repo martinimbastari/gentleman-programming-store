@@ -58,13 +58,12 @@ export const  ProductList = ()  => {
         @media (max-width: 768px) {
         width: 180px;
         height: 400px;
-        padding: 0 5px 10px 5px;
-        margin-top: 0;
+        padding: 0px ;
+        margin-top: 10px;
         }
     `
 
 const Img = styled.img `
-
 @media (max-width: 768px) {
     height:100%;
     padding: 0;
@@ -107,6 +106,13 @@ const Img = styled.img `
             background-color: #2C394D;
             cursor: pointer;
         }
+        @media (max-width: 768px) {
+            border-radius: 0px 0px 11px 11px;
+            width: 100%;
+            height: 70px;
+        }
+
+        
     `
 
 useEffect(() => {
