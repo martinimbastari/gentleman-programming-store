@@ -20,6 +20,7 @@ export const  ProductList = ()  => {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 180px;
     `
 
     const ContainerList = styled.div`

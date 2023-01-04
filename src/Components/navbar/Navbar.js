@@ -16,6 +16,7 @@ align-items: center;
 width: 100%;
 background-color: #2D4263;
 z-index: 100;
+position: fixed;
 `
 
 // const HamburgerMenu = styled.div `
