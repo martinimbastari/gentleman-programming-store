@@ -4,6 +4,7 @@ import { getFirestore, collection, getDocs} from "firebase/firestore";
 // import Itemcard from '../ItemCard/Itemcard';
 import ProductsFilter from '../productsFilter/ProductsFilter';
 import Carrito from '../carrito/Carrito';
+import swal from 'sweetalert';
 
 
 
@@ -137,6 +138,7 @@ useEffect(() => {
         setTotal(total + product.price * product.quantity);
         setCountProducts(countProducts + product.quantity);
         setAllProducts([...allProducts, product]);
+        swal("Tu producto se agrego correctamente", "Pulsa el boton para continuar", "success");
         
     }
     
