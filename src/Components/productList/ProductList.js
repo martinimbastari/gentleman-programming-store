@@ -5,6 +5,7 @@ import { getFirestore, collection, getDocs} from "firebase/firestore";
 import ProductsFilter from '../productsFilter/ProductsFilter';
 import Carrito from '../carrito/Carrito';
 import swal from 'sweetalert';
+import SearchBar from '../serachBar/SearchBar';
 
 
 
@@ -178,7 +179,9 @@ return (
     <>
     <Container>
     <ProductsFilter showLowPrice={showLowPrice} showHighPrice={showHighPrice}/>
+    <SearchBar/>
     <Carrito allProducts={allProducts} setAllProducts={setAllProducts} total={total} setTotal={setTotal} countProducts={countProducts} setCountProducts={setCountProducts} />
+    
     </Container>
     <ContainerList id='productos'>
         {showPrice

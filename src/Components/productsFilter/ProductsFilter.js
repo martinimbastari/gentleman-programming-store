@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 export default function ProductsFilter({showLowPrice,showHighPrice}) {
   const Container = styled.div `
   display: flex;
@@ -26,7 +27,7 @@ margin: 5px;
 background-color: #ffff;
 border-radius: 8px;
 border: 1px solid grey;
-padding: 5px;
+padding: 2px;
 color: black;
 &:hover {
     background-color: #F2F2F2;
@@ -38,10 +39,6 @@ color: black;
         <Title>Filtrar por:</Title>
         <Opcion href="#" onClick={showLowPrice}>Menor Precio</Opcion>
         <Opcion href="#" onClick={showHighPrice}>Mayor Precio</Opcion>
-        {/* <select>
-            <option onSelect={showLowPrice}>Menor Precio</option>
-            <option>Mayor Precio</option>
-        </select> */}
     </Container>
   )
 }
