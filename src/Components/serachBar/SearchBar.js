@@ -37,7 +37,7 @@ export default function SearchBar() {
 const Boton = styled.button`
 padding: 6px;
 font-size: 16px;
-border-radius: 10px;
+border-radius: 0px;
 margin-left: 5px;
 border: none;
 background-color: #2D4263;
