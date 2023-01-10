@@ -8,7 +8,7 @@ export default function SearchBar() {
         e.preventDefault();
         const keyword = e.currentTarget.keyword.value.trim();
         if(keyword.length === 0) {
-            swal(<h5>Tienes que ingresar al menos un producto</h5>)
+            swal("Tienes que ingresar al menos un producto")
         } else if (keyword.length < 4){
             swal(<h5>Ingresa mas de 4 caracteres</h5>)
         } else {
