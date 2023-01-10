@@ -41,14 +41,13 @@ export default function SearchBar() {
         if(keyword.length === 0) {
             swal("Tienes que ingresar al menos un producto")
         } else if (keyword.length < 4){
-            swal(<h5>Ingresa mas de 4 caracteres</h5>)
+            swal("Ingresa mas de 4 caracteres")
         } else {
             if (searchInput.length > 0) {
     countries.filter((country) => {
     console.log(country.name.match(searchInput))
 });
-}
-            
+}    
         }
     }
 
