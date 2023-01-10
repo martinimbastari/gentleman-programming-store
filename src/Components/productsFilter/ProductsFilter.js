@@ -2,19 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-export default function ProductsFilter({showLowPrice,showHighPrice}) {
-  const Container = styled.div `
-  display: flex;
-  color: white;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  @media (max-width: 768px) {
-  font-size: 15px;
-  padding: 10px 0;
+const Container = styled.div `
+display: flex;
+color: white;
+text-align: center;
+justify-content: center;
+align-items: center;
+padding: 10px;
+@media (max-width: 768px) {
+font-size: 15px;
+padding: 10px 0;
 }
-  `
+`
 
 const Title = styled.h2 `
 font-size: 18px;
@@ -30,9 +29,12 @@ border: 1px solid grey;
 padding: 2px;
 color: black;
 &:hover {
-    background-color: #F2F2F2;
-  }
+  background-color: #F2F2F2;
+}
 `
+
+export default function ProductsFilter({showLowPrice,showHighPrice}) {
+
 
   return (
     <Container>
