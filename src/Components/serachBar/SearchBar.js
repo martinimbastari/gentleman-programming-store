@@ -39,8 +39,6 @@ export default function SearchBar( {submitHandler, handleChange, query}) {
     
     // console.log(Products.filter(product=> product.name.toLowerCase().includes("fe")))
 
-    
-
 
 
   return (
@@ -50,3 +48,4 @@ export default function SearchBar( {submitHandler, handleChange, query}) {
     </form>
   )
 }
+
