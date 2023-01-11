@@ -10,15 +10,19 @@ justify-content: center;
 align-items: center;
 padding: 10px;
 @media (max-width: 768px) {
-font-size: 15px;
-padding: 10px 0;
+font-size: 12px;
+padding: 2px 0;
+margin: 0 autos;
 }
 `
 
 const Title = styled.h2 `
-font-size: 18px;
+font-size: 15px;
 margin: 10px;
 font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 768px) {
+font-size: 13px;
+}
 `
 const Opcion = styled.a `
 text-decoration: none;
@@ -26,7 +30,7 @@ margin: 5px;
 background-color: #ffff;
 border-radius: 8px;
 border: 1px solid grey;
-padding: 2px;
+padding: 1px 6px;
 color: black;
 &:hover {
   background-color: #F2F2F2;

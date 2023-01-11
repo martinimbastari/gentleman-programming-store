@@ -9,9 +9,17 @@ import SearchBar from '../serachBar/SearchBar';
 
 const Container = styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
 margin-top: 180px;
+gap: 20px;
+@media (max-width: 768px) {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+`
+const ContainerFilter = styled.div`
+ display: block;
 `
 
 const ContainerList = styled.div`
@@ -188,11 +196,12 @@ useEffect(() => {
 return (
     <>
     <Container>
-    <ProductsFilter showLowPrice={showLowPrice} showHighPrice={showHighPrice}/>
     <SearchBar query={query} handleChange={handleChange}  submitHandler={submitHandler} />
     <Carrito allProducts={allProducts} setAllProducts={setAllProducts} total={total} setTotal={setTotal} countProducts={countProducts} setCountProducts={setCountProducts} />
-    
     </Container>
+    <ContainerFilter>
+    <ProductsFilter showLowPrice={showLowPrice} showHighPrice={showHighPrice}/>
+    </ContainerFilter>
     <ContainerList id='productos'>
         {showPrice
         ? (data.filter(product => product.title.toLowerCase().includes(query)

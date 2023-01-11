@@ -10,7 +10,7 @@ background-color: #141C29;
 color: black;
 box-sizing: border-box;
 position: absolute;
-max-width: 2000px;
+max-width: 100%;
 font-family: 'Poppins', sans-serif;
 
 `

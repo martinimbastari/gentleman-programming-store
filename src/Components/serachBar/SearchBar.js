@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 
 const Input = styled.input`
 padding: 5px 8px;
-font-size: 16px;
+font-size: 18px;
 border-width: 1px;
 border-color: #CCCCCC;
 background-color: #FFFFFF;
@@ -16,11 +16,15 @@ text-shadow: 0px 0px 5px rgba(66,66,66,.75);
 &:focus {
 outline:none;
 }
+
+@media (max-width: 768px) {
+  
+    }
 `
 
 const Boton = styled.button`
 padding: 6px;
-font-size: 16px;
+font-size: 18px;
 border-radius: 0px 10px 10px 0;
 margin-left: 0px;
 border: none;
