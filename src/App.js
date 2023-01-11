@@ -11,6 +11,8 @@ color: black;
 box-sizing: border-box;
 position: absolute;
 max-width: 100%;
+min-width: 100%;
+min-height: 100%;
 font-family: 'Poppins', sans-serif;
 
 `
