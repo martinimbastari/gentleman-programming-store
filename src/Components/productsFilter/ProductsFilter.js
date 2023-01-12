@@ -9,6 +9,7 @@ text-align: center;
 justify-content: center;
 align-items: center;
 padding: 10px;
+flex-wrap: wrap;
 @media (max-width: 768px) {
 font-size: 12px;
 padding: 2px 0;
@@ -37,7 +38,7 @@ color: black;
 }
 `
 
-export default function ProductsFilter({showLowPrice,showHighPrice}) {
+export default function ProductsFilter({showLowPrice,showHighPrice,allCategories, categories, filterCategory}) {
 
 
   return (
@@ -45,6 +46,13 @@ export default function ProductsFilter({showLowPrice,showHighPrice}) {
         <Title>Filtrar por:</Title>
         <Opcion href="#" onClick={showLowPrice}>Menor Precio</Opcion>
         <Opcion href="#" onClick={showHighPrice}>Mayor Precio</Opcion>
+        {allCategories.map(category => 
+          <Opcion 
+          onClick={()=> filterCategory(category)}
+          key={category}>
+            {category}
+          </Opcion>
+        )}
     </Container>
   )
 }

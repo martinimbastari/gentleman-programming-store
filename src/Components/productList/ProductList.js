@@ -118,12 +118,15 @@ const Button = styled.button `
 
 
 export const  ProductList = ()  => {
+
+
     const [data, setData] = useState([]);
     const [showPrice, setShowPrice] = useState();
     const [allProducts, setAllProducts] = useState([])
     const [total, setTotal] = useState(0)
     const [countProducts, setCountProducts] = useState(0);
     const [query, setQuery] = useState("");
+    
     
 
 
@@ -133,6 +136,16 @@ useEffect(() => {
     getDocs(queryCollection)
     .then( res => setData(res.docs.map(product => ({id: product.id, ...product.data() }))))
 }, []) 
+
+    const allCategories = ['All',...new Set(data.map(product => product.category))]
+    const [categories, setCategories] = useState(allCategories);
+
+    console.log(categories)
+
+    const filterCategory = (category) => {
+        console.log(category)
+    }
+    
 
     const onAddProduct = (product) => {
 
@@ -182,16 +195,17 @@ useEffect(() => {
         setShowPrice(false)
     }
 
-    const submitHandler = (query) => {
+    const submitHandler = (query,e) => {
+        e.preventDefault();
+        setQuery(query)
         console.log(query)
     }
 
     const handleChange = (e) => {
+        e.preventDefault();
         setQuery(e.target.value)
-        console.log(query)
     }
     
-
 
 return (
     <>
@@ -200,7 +214,7 @@ return (
     <Carrito allProducts={allProducts} setAllProducts={setAllProducts} total={total} setTotal={setTotal} countProducts={countProducts} setCountProducts={setCountProducts} />
     </Container>
     <ContainerFilter>
-    <ProductsFilter showLowPrice={showLowPrice} showHighPrice={showHighPrice}/>
+    <ProductsFilter allCategories={allCategories} categories={categories} filterCategory={filterCategory} showLowPrice={showLowPrice} showHighPrice={showHighPrice}/>
     </ContainerFilter>
     <ContainerList id='productos'>
         {showPrice
