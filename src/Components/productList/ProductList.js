@@ -115,8 +115,6 @@ const Button = styled.button `
 `
 
 
-
-
 export const  ProductList = ()  => {
 
 
@@ -137,13 +135,19 @@ useEffect(() => {
     .then( res => setData(res.docs.map(product => ({id: product.id, ...product.data() }))))
 }, []) 
 
-    const allCategories = ['All',...new Set(data.map(product => product.category))]
+    const allCategories = ['All',...new Set(data.map(product => product.category))];
+    
     const [categories, setCategories] = useState(allCategories);
 
     console.log(categories)
 
     const filterCategory = (category) => {
-        console.log(category)
+        if (category === "All") {
+            setData(data)
+            return
+        }
+        const filteredData = data.filter(product => product.category === category);
+        setData(filteredData);
     }
     
 
