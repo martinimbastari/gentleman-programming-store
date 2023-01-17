@@ -144,10 +144,11 @@ useEffect(() => {
     const filterCategory = (category) => {
         if (category === "All") {
             setData(data)
-            return
+            
         }
         const filteredData = data.filter(product => product.category === category);
         setData(filteredData);
+        
     }
     
 
